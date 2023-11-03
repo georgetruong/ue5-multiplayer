@@ -16,7 +16,7 @@ AMultiplayerCourseGameMode::AMultiplayerCourseGameMode()
 
 void AMultiplayerCourseGameMode::HostLANGame()
 {
-	GetWorld()->ServerTravel("Game/ThirdPerson/Maps/ThirdPersonMap?listen");
+	GetWorld()->ServerTravel("/Game/ThirdPerson/Maps/ThirdPersonMap?listen");
 }
 
 void AMultiplayerCourseGameMode::JoinLANGame()

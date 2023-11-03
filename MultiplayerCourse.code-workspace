@@ -1,0 +1,884 @@
+{
+	"folders": [
+		{
+			"name": "MultiplayerCourse",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "E:\\Epic Games\\UE_5.3"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off",
+		"dotnet.defaultSolution": "disable"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "MultiplayerCourse Win64 Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourse",
+					"Win64",
+					"Debug",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Win64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourse",
+					"Win64",
+					"Debug",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourse Win64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Win64 Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerCourse",
+					"Win64",
+					"Debug",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Win64 DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourse",
+					"Win64",
+					"DebugGame",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Win64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourse",
+					"Win64",
+					"DebugGame",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourse Win64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Win64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerCourse",
+					"Win64",
+					"DebugGame",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Win64 Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourse",
+					"Win64",
+					"Development",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Win64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourse",
+					"Win64",
+					"Development",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourse Win64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Win64 Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerCourse",
+					"Win64",
+					"Development",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Win64 Test Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourse",
+					"Win64",
+					"Test",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Win64 Test Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourse",
+					"Win64",
+					"Test",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourse Win64 Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Win64 Test Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerCourse",
+					"Win64",
+					"Test",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Win64 Shipping Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourse",
+					"Win64",
+					"Shipping",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Win64 Shipping Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourse",
+					"Win64",
+					"Shipping",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourse Win64 Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Win64 Shipping Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerCourse",
+					"Win64",
+					"Shipping",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse IOS Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourse",
+					"IOS",
+					"Debug",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse IOS Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourse",
+					"IOS",
+					"Debug",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourse IOS Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse IOS Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerCourse",
+					"IOS",
+					"Debug",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse IOS DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourse",
+					"IOS",
+					"DebugGame",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse IOS DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourse",
+					"IOS",
+					"DebugGame",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourse IOS DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse IOS DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerCourse",
+					"IOS",
+					"DebugGame",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse IOS Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourse",
+					"IOS",
+					"Development",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse IOS Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourse",
+					"IOS",
+					"Development",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourse IOS Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse IOS Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerCourse",
+					"IOS",
+					"Development",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse IOS Test Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourse",
+					"IOS",
+					"Test",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse IOS Test Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourse",
+					"IOS",
+					"Test",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourse IOS Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse IOS Test Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerCourse",
+					"IOS",
+					"Test",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse IOS Shipping Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourse",
+					"IOS",
+					"Shipping",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse IOS Shipping Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourse",
+					"IOS",
+					"Shipping",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourse IOS Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourse IOS Shipping Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerCourse",
+					"IOS",
+					"Shipping",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourseEditor Win64 Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourseEditor",
+					"Win64",
+					"Debug",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourseEditor Win64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourseEditor",
+					"Win64",
+					"Debug",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourseEditor Win64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourseEditor Win64 Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerCourseEditor",
+					"Win64",
+					"Debug",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourseEditor Win64 DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourseEditor",
+					"Win64",
+					"DebugGame",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourseEditor Win64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourseEditor",
+					"Win64",
+					"DebugGame",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourseEditor Win64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourseEditor Win64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerCourseEditor",
+					"Win64",
+					"DebugGame",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourseEditor Win64 Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourseEditor",
+					"Win64",
+					"Development",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourseEditor Win64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerCourseEditor",
+					"Win64",
+					"Development",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourseEditor Win64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerCourseEditor Win64 Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerCourseEditor",
+					"Win64",
+					"Development",
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\Epic Games\\UE_5.3"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch MultiplayerCourse (Debug)",
+				"request": "launch",
+				"program": "E:\\gamedev\\unreal\\MultiplayerCourse\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+				"preLaunchTask": "MultiplayerCourse Win64 Debug Build",
+				"args": [
+				],
+				"cwd": "E:\\Epic Games\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "E:\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch MultiplayerCourse (DebugGame)",
+				"request": "launch",
+				"program": "E:\\gamedev\\unreal\\MultiplayerCourse\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+				"preLaunchTask": "MultiplayerCourse Win64 DebugGame Build",
+				"args": [
+				],
+				"cwd": "E:\\Epic Games\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "E:\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch MultiplayerCourse (Development)",
+				"request": "launch",
+				"program": "E:\\gamedev\\unreal\\MultiplayerCourse\\Binaries\\Win64\\UnrealGame.exe",
+				"preLaunchTask": "MultiplayerCourse Win64 Development Build",
+				"args": [
+				],
+				"cwd": "E:\\Epic Games\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "E:\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch MultiplayerCourse (Test)",
+				"request": "launch",
+				"program": "E:\\gamedev\\unreal\\MultiplayerCourse\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+				"preLaunchTask": "MultiplayerCourse Win64 Test Build",
+				"args": [
+				],
+				"cwd": "E:\\Epic Games\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "E:\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch MultiplayerCourse (Shipping)",
+				"request": "launch",
+				"program": "E:\\gamedev\\unreal\\MultiplayerCourse\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+				"preLaunchTask": "MultiplayerCourse Win64 Shipping Build",
+				"args": [
+				],
+				"cwd": "E:\\Epic Games\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "E:\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch MultiplayerCourseEditor (Debug)",
+				"request": "launch",
+				"program": "E:\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
+				"preLaunchTask": "MultiplayerCourseEditor Win64 Debug Build",
+				"args": [
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject"
+				],
+				"cwd": "E:\\Epic Games\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "E:\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch MultiplayerCourseEditor (DebugGame)",
+				"request": "launch",
+				"program": "E:\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
+				"preLaunchTask": "MultiplayerCourseEditor Win64 DebugGame Build",
+				"args": [
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject"
+				],
+				"cwd": "E:\\Epic Games\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "E:\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch MultiplayerCourseEditor (Development)",
+				"request": "launch",
+				"program": "E:\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
+				"preLaunchTask": "MultiplayerCourseEditor Win64 Development Build",
+				"args": [
+					"E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject"
+				],
+				"cwd": "E:\\Epic Games\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "E:\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "E:\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Win64 Development Build",
+				"program": "E:\\Epic Games\\UE_5.3\\Engine\\Build\\BatchFiles\\RunUBT.bat",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=E:\\gamedev\\unreal\\MultiplayerCourse\\MultiplayerCourse.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"console": "externalTerminal",
+				"stopAtEntry": false,
+				"cwd": "E:\\Epic Games\\UE_5.3"
+			}
+		]
+	}
+}

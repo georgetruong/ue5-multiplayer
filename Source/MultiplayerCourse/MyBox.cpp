@@ -53,12 +53,12 @@ void AMyBox::OnRep_ReplicatedVar()
 		FVector NewLocation = GetActorLocation() + FVector(0.0f, 0.0f, 200.0f);
 		SetActorLocation(NewLocation);
 
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, TEXT("Server: OnRep_ReplicatedVar"));
+		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, TEXT("Server: OnRep_ReplicatedVar"));
 	}
 	else
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, 
-			FString::Printf(TEXT("Client %d: OnRep_ReplicatedVar"), GPlayInEditorID));
+		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, 
+		//	FString::Printf(TEXT("Client %d: OnRep_ReplicatedVar"), GPlayInEditorID));
 	}
 }
 

@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Particles/ParticleSystem.h"
 #include "MyBox.generated.h"
 
 UCLASS()
@@ -37,4 +38,7 @@ public:
 
 	UFUNCTION(NetMulticast, Reliable)
 	void MulticastRPCExplode();
+
+	UPROPERTY(EditAnywhere)
+	UParticleSystem *ExplosionEffect;
 };

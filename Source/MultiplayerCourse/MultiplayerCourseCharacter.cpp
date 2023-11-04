@@ -141,8 +141,10 @@ void AMultiplayerCourseCharacter::ServerRPCFunction_Implementation(int MyArg)
 			TEXT("Server: ServerRPCFunction_Implementation"));
 #endif
 
+#if 0
 		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, 
 			FString::Printf(TEXT("MyArg: %d"), MyArg));
+#endif
 
 		if (!SphereMesh) return;
 

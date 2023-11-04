@@ -34,4 +34,7 @@ public:
 	void DecreaseReplicatedVar();
 
 	FTimerHandle TestTimer;
+
+	UFUNCTION(NetMulticast, Reliable)
+	void MulticastRPCExplode();
 };

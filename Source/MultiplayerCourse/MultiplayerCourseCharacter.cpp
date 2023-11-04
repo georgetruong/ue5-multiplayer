@@ -148,9 +148,12 @@ void AMultiplayerCourseCharacter::ServerRPCFunction_Implementation(int MyArg)
 
 		if (!SphereMesh) return;
 
-		AStaticMeshActor *StaticMeshActor = GetWorld()->SpawnActor<AStaticMeshActor>(AStaticMeshActor::StaticClass());
+		FActorSpawnParameters SpawnParameters;
+		SpawnParameters.Owner = this;
+		AStaticMeshActor *StaticMeshActor = GetWorld()->SpawnActor<AStaticMeshActor>(SpawnParameters);
 		if (StaticMeshActor)
 		{
+			//StaticMeshActor->SetOwner(this);
 			StaticMeshActor->SetReplicates(true);
 			StaticMeshActor->SetReplicateMovement(true);
 			StaticMeshActor->SetMobility(EComponentMobility::Movable);

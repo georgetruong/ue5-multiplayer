@@ -21,6 +21,11 @@ void AMyBox::BeginPlay()
 
 	SetReplicates(true);
 	SetReplicateMovement(true);
+
+	if (HasAuthority())
+	{
+		GetWorld()->GetTimerManager().SetTimer(TestTimer, this, &AMyBox::DecreaseReplicatedVar, 2.0f, false);
+	}
 }
 
 // Called every frame
@@ -62,5 +67,19 @@ void AMyBox::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimePr
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
 	DOREPLIFETIME(AMyBox, ReplicatedVar);
+}
+
+void AMyBox::DecreaseReplicatedVar()
+{
+	if (HasAuthority())
+	{
+		ReplicatedVar -= 1.0f;
+		OnRep_ReplicatedVar();
+
+		if (ReplicatedVar > 0)
+		{
+			GetWorld()->GetTimerManager().SetTimer(TestTimer, this, &AMyBox::DecreaseReplicatedVar, 2.0f, false);
+		}
+	}
 }
 

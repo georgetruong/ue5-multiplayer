@@ -132,7 +132,7 @@ void AMultiplayerCourseCharacter::Look(const FInputActionValue& Value)
 }
 
 // RPCs
-void AMultiplayerCourseCharacter::ServerRPCFunction_Implementation()
+void AMultiplayerCourseCharacter::ServerRPCFunction_Implementation(int MyArg)
 {
 	if (HasAuthority())
 	{
@@ -140,6 +140,9 @@ void AMultiplayerCourseCharacter::ServerRPCFunction_Implementation()
 		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, 
 			TEXT("Server: ServerRPCFunction_Implementation"));
 #endif
+
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, 
+			FString::Printf(TEXT("MyArg: %d"), MyArg));
 
 		if (!SphereMesh) return;
 
@@ -166,4 +169,14 @@ void AMultiplayerCourseCharacter::ServerRPCFunction_Implementation()
 			}
 		}
 	}
+}
+
+bool AMultiplayerCourseCharacter::ServerRPCFunction_Validate(int MyArg)
+{
+	if (MyArg >= 0 && MyArg <= 100)
+	{
+		return true;
+	}
+
+	return false;
 }

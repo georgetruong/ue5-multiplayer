@@ -55,6 +55,17 @@ void UMultiplayerSessionsSubsystem::CreateServer(FString ServerName)
 
     FName MySessionName = FName("Co-op Adventure Session Name");
 
+    FNamedOnlineSession *ExistingSession = SessionInterface->GetNamedSession(MySessionName);
+    if (ExistingSession)
+    {
+        FString Msg = FString::Printf(
+            TEXT("Session with name %s already exists, destroying it."), *MySessionName.ToString()
+        );
+        PrintString(Msg);
+        SessionInterface->DestroySession(MySessionName);
+        return;
+    }
+
     FOnlineSessionSettings SessionSettings;
     SessionSettings.bAllowJoinInProgress = true;
     SessionSettings.bIsDedicated = false;

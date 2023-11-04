@@ -12,6 +12,7 @@
 #include "InputActionValue.h"
 #include "Net/UnrealNetwork.h"
 #include "Engine/StaticMeshActor.h"
+#include "Kismet/GameplayStatics.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -184,4 +185,14 @@ bool AMultiplayerCourseCharacter::ServerRPCFunction_Validate(int MyArg)
 	}
 
 	return false;
+}
+
+void AMultiplayerCourseCharacter::ClientRPCFunction_Implementation()
+{
+	if (ParticleEffect)
+	{
+		FVector SpawnLocation = GetActorLocation();
+		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ParticleEffect, SpawnLocation, 
+			FRotator::ZeroRotator, true, EPSCPoolMethod::AutoRelease);
+	}
 }

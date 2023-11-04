@@ -29,5 +29,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void FindServer(FString ServerName);
 
-	void OnCreateSessionComplete(FName SessionName, bool bWasSuccesful);
+	void OnCreateSessionComplete(FName SessionName, bool bWasSuccessful);
+	void OnDestroySessionComplete(FName SessionName, bool bWasSuccessful);
+
+	bool CreateServerAfterDestroy;
+	FString DestroyServerName;
 };

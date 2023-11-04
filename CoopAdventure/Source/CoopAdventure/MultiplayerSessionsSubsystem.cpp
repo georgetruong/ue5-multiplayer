@@ -16,6 +16,9 @@ void PrintString(const FString& Str)
 UMultiplayerSessionsSubsystem::UMultiplayerSessionsSubsystem()
 {
     //PrintString("MSS Constructor");
+
+    CreateServerAfterDestroy = false;
+    DestroyServerName = "";
 }
 
 void UMultiplayerSessionsSubsystem::Initialize(FSubsystemCollectionBase& Collection)
@@ -33,6 +36,9 @@ void UMultiplayerSessionsSubsystem::Initialize(FSubsystemCollectionBase& Collect
         {
             SessionInterface->OnCreateSessionCompleteDelegates.AddUObject(
                 this, &UMultiplayerSessionsSubsystem::OnCreateSessionComplete
+            );
+            SessionInterface->OnDestroySessionCompleteDelegates.AddUObject(
+                this, &UMultiplayerSessionsSubsystem::OnDestroySessionComplete
             );
         }
     }
@@ -62,6 +68,8 @@ void UMultiplayerSessionsSubsystem::CreateServer(FString ServerName)
             TEXT("Session with name %s already exists, destroying it."), *MySessionName.ToString()
         );
         PrintString(Msg);
+        CreateServerAfterDestroy = true;
+        DestroyServerName = ServerName;
         SessionInterface->DestroySession(MySessionName);
         return;
     }
@@ -90,12 +98,25 @@ void UMultiplayerSessionsSubsystem::FindServer(FString ServerName)
     PrintString("Finding server...");
 }
 
-void UMultiplayerSessionsSubsystem::OnCreateSessionComplete(FName SessionName, bool bWasSuccesful)
+void UMultiplayerSessionsSubsystem::OnCreateSessionComplete(FName SessionName, bool bWasSuccessful)
 {
-    PrintString(FString::Printf(TEXT("OnCreateSessionComplete: %d"), bWasSuccesful));
+    PrintString(FString::Printf(TEXT("OnCreateSessionComplete: %d"), bWasSuccessful));
 
-    if (bWasSuccesful)
+    if (bWasSuccessful)
     {
         GetWorld()->ServerTravel("/Game/ThirdPerson/Maps/ThirdPersonMap?listen");
+    }
+}
+
+void UMultiplayerSessionsSubsystem::OnDestroySessionComplete(FName SessionName, bool bWasSuccessful)
+{
+    FString Msg = FString::Printf(TEXT("OnDestroySessionComplete, SessionName: %s, Success: %d"), 
+        *SessionName.ToString(), bWasSuccessful);
+    PrintString(Msg);
+
+    if (CreateServerAfterDestroy)
+    {
+        CreateServerAfterDestroy = false;
+        CreateServer(DestroyServerName);
     }
 }

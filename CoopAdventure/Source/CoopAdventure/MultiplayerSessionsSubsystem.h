@@ -34,7 +34,9 @@ public:
 	void OnCreateSessionComplete(FName SessionName, bool bWasSuccessful);
 	void OnDestroySessionComplete(FName SessionName, bool bWasSuccessful);
 	void OnFindSessionsComplete(bool bWasSuccessful);
+	void OnJoinSessionComplete(FName SessionName, EOnJoinSessionCompleteResult::Type Result);
 
+	FName MySessionName;
 	bool CreateServerAfterDestroy;
 	FString DestroyServerName;
 	FString ServerNameToFind;

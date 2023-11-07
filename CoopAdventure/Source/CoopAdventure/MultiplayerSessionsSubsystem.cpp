@@ -63,6 +63,7 @@ void UMultiplayerSessionsSubsystem::CreateServer(FString ServerName)
     if (ServerName.IsEmpty())
     {
         PrintString("Server name cannot be empty!");
+        ServerCreateDel.Broadcast(false);
         return;
     }
 
@@ -107,6 +108,7 @@ void UMultiplayerSessionsSubsystem::FindServer(FString ServerName)
     if (ServerName.IsEmpty())
     {
         PrintString("Server name cannot be empty!");
+        ServerJoinDel.Broadcast(false);
         return;
     }
 
@@ -130,6 +132,8 @@ void UMultiplayerSessionsSubsystem::OnCreateSessionComplete(FName SessionName, b
 {
     PrintString(FString::Printf(TEXT("OnCreateSessionComplete: %d"), bWasSuccessful));
 
+    ServerCreateDel.Broadcast(bWasSuccessful);
+
     if (bWasSuccessful)
     {
         GetWorld()->ServerTravel("/Game/ThirdPerson/Maps/ThirdPersonMap?listen");
@@ -151,8 +155,11 @@ void UMultiplayerSessionsSubsystem::OnDestroySessionComplete(FName SessionName, 
 
 void UMultiplayerSessionsSubsystem::OnFindSessionsComplete(bool bWasSuccessful)
 {
-    if (!bWasSuccessful) return;
-    if (ServerNameToFind.IsEmpty()) return;
+    if (!bWasSuccessful || ServerNameToFind.IsEmpty()) 
+    {
+        ServerJoinDel.Broadcast(false);
+        return;
+    }
 
     TArray<FOnlineSessionSearchResult> Results = SessionSearch->SearchResults;
     FOnlineSessionSearchResult* CorrectResult = 0;
@@ -187,16 +194,20 @@ void UMultiplayerSessionsSubsystem::OnFindSessionsComplete(bool bWasSuccessful)
         {
             PrintString(FString::Printf(TEXT("Couldn't find server with name: %s"), *ServerNameToFind));
             ServerNameToFind = "";
+            ServerJoinDel.Broadcast(false);
         }
     }
     else
     {
         PrintString("Zero sessions found.");
+        ServerJoinDel.Broadcast(false);
     }
 }
 
 void UMultiplayerSessionsSubsystem::OnJoinSessionComplete(FName SessionName, EOnJoinSessionCompleteResult::Type Result)
 {
+    ServerJoinDel.Broadcast(Result == EOnJoinSessionCompleteResult::Success);
+
     if (Result == EOnJoinSessionCompleteResult::Success)
     {
         FString Msg = FString::Printf(TEXT("Successfully joined session %s"), *SessionName.ToString());

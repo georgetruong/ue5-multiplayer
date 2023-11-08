@@ -35,10 +35,10 @@ APressurePlate::APressurePlate()
 	Mesh->SetIsReplicated(true);
 
 	auto MeshAsset = ConstructorHelpers::FObjectFinder<UStaticMesh>(
-		TEXT("/Game/PolygonPrototype/Meshes/FX/SM_FX_Glow_Ring_01.SM_FX_Glow_Ring_01"));
+		TEXT("/Game/PolygonPrototype/Meshes/FX/SM_FX_Glow_Ring_01"));
 	if (MeshAsset.Succeeded())
 	{
-		Mesh->SetStaticMesh(TriggerMeshAsset.Object);
+		Mesh->SetStaticMesh(MeshAsset.Object);
 		Mesh->SetRelativeScale3D(FVector(4.0f, 4.0f, 0.5f));
 		Mesh->SetRelativeLocation(FVector(0.0f, 0.0f, 7.2f));
 	}
@@ -57,6 +57,42 @@ void APressurePlate::BeginPlay()
 void APressurePlate::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	if (HasAuthority())
+	{
+		AActor* TriggerActor = 0;
+		TArray<AActor*> OverlappingActors;
+		TriggerMesh->GetOverlappingActors(OverlappingActors);
+		for (int ActorIdx = 0; ActorIdx < OverlappingActors.Num(); ++ActorIdx)
+		{
+			AActor* A = OverlappingActors[ActorIdx];
+			if (A->ActorHasTag("TriggerActor"))
+			{
+				TriggerActor = A;
+				break;
+			}
+
+			//FString Msg = FString::Printf(TEXT("Name: %s"), *A->GetName());
+			//GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::White, Msg);
+		}
+
+		if (TriggerActor)
+		{
+			if (!Activated)
+			{
+				Activated = true;
+				GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::White, TEXT("Activated"));
+			}
+		}
+		else
+		{
+			if (Activated)
+			{
+				Activated = false;
+				GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::White, TEXT("Deactivated"));
+			}
+		}
+	}
 
 }
 
